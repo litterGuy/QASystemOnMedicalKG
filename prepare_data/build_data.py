@@ -10,7 +10,7 @@ from max_cut import *
 
 class MedicalGraph:
     def __init__(self):
-        self.conn = pymongo.MongoClient()
+        self.conn = pymongo.MongoClient('mongodb://admin:123456@localhost:27017/')
         cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
         self.db = self.conn['medical']
         self.col = self.db['data']

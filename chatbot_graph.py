@@ -4,11 +4,13 @@
 # Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
 # Date: 18-10-4
 
+from answer_search import *
 from question_classifier import *
 from question_parser import *
-from answer_search import *
 
 '''问答类'''
+
+
 class ChatBotGraph:
     def __init__(self):
         self.classifier = QuestionClassifier()
@@ -27,10 +29,10 @@ class ChatBotGraph:
         else:
             return '\n'.join(final_answers)
 
+
 if __name__ == '__main__':
     handler = ChatBotGraph()
     while 1:
         question = input('用户:')
         answer = handler.chat_main(question)
         print('小勇:', answer)
-

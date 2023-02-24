@@ -8,11 +8,7 @@ from py2neo import Graph
 
 class AnswerSearcher:
     def __init__(self):
-        self.g = Graph(
-            host="127.0.0.1",
-            http_port=7474,
-            user="lhy",
-            password="lhy123")
+        self.g = Graph("neo4j+s://c7d2bf08.databases.neo4j.io", auth=("neo4j", "7xEPBGk-x6qYxsOuD7SlXMONGYLRVNT0-2RQmZctiI0"), name="neo4j")
         self.num_limit = 20
 
     '''执行cypher查询，并返回相应结果'''
